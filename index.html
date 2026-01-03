@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xanadu P&D | Conectando Ciência e Indústria</title>
+    <style>
+        :root {
+            --primary: #00ff88; /* Verde Neon Tático */
+            --secondary: #00ccff; /* Azul Inovação */
+            --bg: #0a0a0a;      /* Preto Profundo */
+            --text: #e0e0e0;    /* Cinza Claro */
+            --card: #161616;    /* Cinza Chumbo */
+            --accent: #2a2a2a;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        /* CABEÇALHO */
+        header {
+            background: rgba(0,0,0,0.95);
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+            z-index: 1000;
+        }
+        
+        .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; color: white; text-transform: uppercase; }
+        .logo span { color: var(--primary); }
+        
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        
+        /* BOTÕES */
+        .btn {
+            padding: 12px 30px;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .btn:hover { background: var(--primary); color: black; box-shadow: 0 0 15px rgba(0, 255, 136, 0.4); }
+        
+        .btn-sec { border-color: var(--secondary); color: var(--secondary); margin-left: 10px; }
+        .btn-sec:hover { background: var(--secondary); color: black; box-shadow: 0 0 15px rgba(0, 204, 255, 0.4); }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+            padding: 120px 20px 60px 20px;
+        }
+        
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; text-transform: uppercase; line-height: 1.1; color: white; }
+        .hero h2 { font-size: 1.5rem; font-weight: 300; color: var(--primary); margin-bottom: 30px; letter-spacing: 1px; }
+        .hero p { font-size: 1.1rem; max-width: 800px; margin-bottom: 40px; color: #bbb; }
+
+        /* SEÇÕES GERAIS */
+        section { padding: 80px 10%; }
+        .section-title { font-size: 2rem; margin-bottom: 40px; color: white; text-transform: uppercase; border-left: 5px solid var(--primary); padding-left: 15px; }
+        
+        /* GRADE DE SERVIÇOS */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        
+        .card {
+            background: var(--card);
+            padding: 30px;
+            border-top: 3px solid #333;
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--secondary); box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
+        .card h3 { margin-bottom: 15px; color: white; font-size: 1.3rem; }
+        .card p { color: #aaa; font-size: 0.95rem; line-height: 1.7; }
+
+        /* DESTAQUE MARCO LEGAL (STRIPE) */
+        .legal-framework {
+            background: linear-gradient(90deg, #0f0f0f 0%, #161616 100%);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        .legal-text { flex: 2; }
+        .legal-badge { 
+            flex: 1; 
+            background: rgba(0, 255, 136, 0.05); 
+            border: 1px solid var(--primary); 
+            padding: 20px; 
+            text-align: center; 
+            min-width: 250px;
+        }
+
+        /* TAGS DE SETORES */
+        .tags-container { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
+        .tag { background: #222; color: #ccc; padding: 5px 15px; font-size: 0.85rem; border-radius: 20px; border: 1px solid #333; }
+        
+        /* TRL BAR */
+        .trl-bar {
+            display: flex;
+            margin-top: 20px;
+            height: 10px;
+            background: #333;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .trl-fill { width: 100%; background: linear-gradient(90deg, var(--secondary), var(--primary)); }
+
+        footer { text-align: center; padding: 40px; background: #050505; color: #666; font-size: 0.9rem; border-top: 1px solid #222; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            section { padding: 50px 5%; }
+            header { padding: 15px; }
+            nav { display: none; } /* Simplificado para mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">XANADU <span>P&D</span></div>
+        <nav>
+            <a href="#sobre">SOBRE</a>
+            <a href="#servicos">SERVIÇOS</a>
+            <a href="#abordagem">ABORDAGEM</a>
+            <a href="#diferenciais">POR QUE NÓS</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Ideias em Inovação</h1>
+        <h2>Conectando Ciência e Indústria</h2>
+        <p>Impulsionamos o avanço científico e tecnológico no Brasil. Somos catalisadores da inovação, transformando ideias em soluções de mercado e atuando na neoindustrialização do país.</p>
+        <div>
+            <a href="#sobre" class="btn">Conheça a Empresa</a>
+            <a href="https://sistema-bnqr.streamlit.app/" target="_blank" class="btn btn-sec">Plataforma BNQR</a>
+        </div>
+    </div>
+
+    <section id="sobre">
+        <h2 class="section-title">Nossa Missão</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+            <div>
+                <p style="font-size: 1.1rem; color: #ddd; margin-bottom: 20px;">
+                    Nosso objetivo é ser a ponte entre o conhecimento acadêmico e as necessidades da indústria, facilitando a transformação de ideias inovadoras em soluções práticas e comercializáveis.
+                </p>
+                <p style="color: #aaa;">
+                    A Xanadu Pesquisa e Desenvolvimento é uma empresa dinâmica dedicada a impulsionar o ecossistema brasileiro. Atuamos em todas as etapas do processo de inovação, desde a concepção inicial até a inserção no mercado.
+                </p>
+            </div>
+            <div style="background: #1a1a1a; padding: 30px; border-radius: 8px;">
+                <h4 style="color: var(--secondary); margin-bottom: 10px;">MATURIDADE TECNOLÓGICA COMPLETA</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 10px;">Cobrimos todo o espectro de desenvolvimento (TRL 1 ao 9).</p>
+                <div class="trl-bar"><div class="trl-fill"></div></div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #666; margin-top: 5px;">
+                    <span>TRL 1 (Pesquisa)</span>
+                    <span>TRL 9 (Mercado)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" style="background: #0d0d0d;">
+        <h2 class="section-title">Nossos Serviços</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Elaboração de Projetos</h3>
+                <p>Desenvolvemos projetos de P&D sob medida para editais de inovação (FINEP, SENAI). Garantimos propostas competitivas e alinhadas às políticas de fomento.</p>
+            </div>
+            <div class="card">
+                <h3>Intermediação Indústria-ICTs</h3>
+                <p>Facilitamos parcerias estratégicas entre o setor produtivo e Institutos de Ciência e Tecnologia, acelerando a transferência de conhecimento.</p>
+            </div>
+            <div class="card">
+                <h3>Gestão de PD&I</h3>
+                <p>Gerenciamento completo (End-to-End): do planejamento e execução técnica até a prestação de contas financeira de projetos de inovação.</p>
+            </div>
+            <div class="card">
+                <h3>Transferência Internacional</h3>
+                <p>Atuação em negociações globais para trazer inovações ao Brasil e inserir tecnologias nacionais no mercado mundial.</p>
+            </div>
+            <div class="card">
+                <h3>RH para Inovação</h3>
+                <p>Seleção e outsourcing de profissionais altamente qualificados (Mestres e Doutores) para compor equipes de alta performance em seus projetos.</p>
+            </div>
+            <div class="card">
+                <h3>Economia do Projetamento</h3>
+                <p>Atuação ativa na proposição de novos projetos, identificando gargalos na indústria e desenhando a solução antes mesmo da demanda surgir.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="abordagem" class="legal-framework">
+        <div class="legal-text">
+            <h2 style="color:white; margin-bottom: 20px; font-size: 1.8rem;">Compromisso com a Neoindustrialização</h2>
+            <p style="color: #bbb; font-size: 1.1rem; max-width: 800px;">
+                Baseamos nossa atuação no <strong>Marco Legal da Inovação (Lei 13.243/2016)</strong>, aproveitando diretrizes estatais para fomentar a pesquisa científica. Sonhamos e trabalhamos por um Brasil tecnologicamente emancipado.
+            </p>
+        </div>
+        <div class="legal-badge">
+            <h3 style="color: var(--primary); font-size: 2.5rem; margin-bottom: 0;">LEI</h3>
+            <span style="color: white; font-size: 1.2rem; display: block;">13.243/2016</span>
+            <small style="color: #888; text-transform: uppercase; margin-top: 5px; display: block;">Marco Legal da Inovação</small>
+        </div>
+    </section>
+
+    <section id="diferenciais">
+        <h2 class="section-title">Por Que a Xanadu?</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            <div>
+                <h4 style="color: white; margin-bottom: 10px;">Experiência Multisetorial</h4>
+                <p style="color: #aaa; font-size: 0.9rem;">Equipe multidisciplinar com atuação comprovada em setores críticos da economia.</p>
+                <div class="tags-container">
+                    <span class="tag">Química</span>
+                    <span class="tag">Petróleo e Gás</span>
+                    <span class="tag">Farmacêutica</span>
+                    <span class="tag">Biotecnologia</span>
+                    <span class="tag">Energia Verde</span>
+                    <span class="tag">Defesa/Segurança</span>
+                    <span class="tag">TI</span>
+                </div>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 10px;">Rede de Parceiros</h4>
+                <p style="color: #aaa; font-size: 0.9rem;">Conexão direta com laboratórios de ponta, universidades federais e agências de fomento.</p>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 10px;">Resultados</h4>
+                <p style="color: #aaa; font-size: 0.9rem;">Histórico de sucesso na aprovação de editais e entrega técnica de projetos complexos.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <h3 style="color: white; margin-bottom: 20px;">XANADU PESQUISA E DESENVOLVIMENTO</h3>
+        <p>Moldando o futuro da inovação no Brasil.</p>
+        <p style="margin: 20px 0;">
+            <a href="mailto:contato@xanadupesquisa.com.br" style="color: var(--primary); text-decoration: none;">contato@xanadupesquisa.com.br</a>
+        </p>
+        <p style="font-size: 0.8rem; opacity: 0.5;">&copy; 2026 Xanadu P&D. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
