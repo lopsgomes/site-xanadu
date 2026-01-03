@@ -21,7 +21,7 @@
         /* CABEÇALHO */
         header {
             background: rgba(0,0,0,0.95);
-            padding: 20px 5%;
+            padding: 15px 5%;
             position: fixed;
             width: 100%;
             display: flex;
@@ -31,8 +31,31 @@
             z-index: 1000;
         }
         
-        .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; color: white; text-transform: uppercase; }
-        .logo span { color: var(--primary); }
+        /* LOGO E TÍTULO */
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Espaço entre o logo e o texto */
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            height: 45px; /* Tamanho do logo no cabeçalho */
+            width: auto;
+            filter: drop-shadow(0 0 5px rgba(0, 255, 136, 0.3)); /* Brilho sutil */
+        }
+        
+        .brand-text { 
+            font-size: 1.4rem; 
+            font-weight: bold; 
+            letter-spacing: 2px; 
+            color: white; 
+            text-transform: uppercase; 
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+        .brand-text span { font-size: 0.75rem; color: var(--primary); letter-spacing: 4px; margin-top: 3px; }
         
         nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; font-weight: 500; }
         nav a:hover { color: var(--primary); }
@@ -60,7 +83,7 @@
 
         /* HERO SECTION */
         .hero {
-            min-height: 85vh;
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -133,19 +156,42 @@
             .hero h1 { font-size: 2.2rem; }
             section { padding: 50px 5%; }
             header { padding: 15px; }
-            nav { display: none; } /* Simplificado para mobile */
+            nav { display: none; } /* Menu simplificado mobile */
+            .brand-text { display: none; } /* No celular muito pequeno, mostra só o logo */
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">XANADU <span>P&D</span></div>
+        <a href="#" class="brand-container">
+            <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="gradVerde" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#004d29;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00ff88;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="gradAzul" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#003366;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00ccff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <path d="M 40 40 L 160 160" stroke="url(#gradAzul)" stroke-width="22" stroke-linecap="round" />
+                <circle cx="100" cy="100" r="16" fill="#0a0a0a" />
+                <path d="M 160 40 L 40 160" stroke="url(#gradVerde)" stroke-width="22" stroke-linecap="round" />
+                <circle cx="40" cy="40" r="7" fill="#00ccff" />
+                <circle cx="160" cy="160" r="7" fill="#00ccff" />
+                <circle cx="160" cy="40" r="7" fill="#00ff88" />
+                <circle cx="40" cy="160" r="7" fill="#00ff88" />
+            </svg>
+            <div class="brand-text">XANADU <span>P&D</span></div>
+        </a>
+
         <nav>
             <a href="#sobre">SOBRE</a>
             <a href="#servicos">SERVIÇOS</a>
             <a href="#abordagem">ABORDAGEM</a>
-            <a href="#diferenciais">POR QUE NÓS</a>
+            <a href="#diferenciais">DIFERENCIAIS</a>
         </nav>
     </header>
 
