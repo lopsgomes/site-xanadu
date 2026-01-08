@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xanadu P&D | Conectando Ciência e Indústria</title>
+    <title>Xanadu P&D | Adesão à Rede</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --primary: #00ff88; /* Verde Neon Tático */
@@ -16,155 +20,171 @@
         
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         
-        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
-        
-        /* CABEÇALHO */
-        header {
-            background: rgba(0,0,0,0.95);
-            padding: 15px 5%;
-            position: fixed;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #333;
-            z-index: 1000;
+        html { font-size: 16px; }
+
+        h1, h2, h3, h4, label, .btn {
+            font-family: 'Rajdhani', sans-serif;
         }
-        
-        /* LOGO E TÍTULO */
-        .brand-container {
+
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+        /* CABEÇALHO SIMPLIFICADO */
+        header {
+            padding: 20px 5%;
+            border-bottom: 1px solid #333;
             display: flex;
-            align-items: center;
-            gap: 15px; /* Espaço entre o logo e o texto */
-            text-decoration: none;
+            justify-content: center;
+            background: rgba(0,0,0,0.9);
         }
 
         .logo-svg {
-            height: 45px; /* Tamanho do logo no cabeçalho */
+            height: 50px;
             width: auto;
-            filter: drop-shadow(0 0 5px rgba(0, 255, 136, 0.3)); /* Brilho sutil */
         }
-        
-        .brand-text { 
-            font-size: 1.4rem; 
-            font-weight: bold; 
-            letter-spacing: 2px; 
-            color: white; 
-            text-transform: uppercase; 
-            display: flex;
-            flex-direction: column;
-            line-height: 1;
-        }
-        .brand-text span { font-size: 0.75rem; color: var(--primary); letter-spacing: 4px; margin-top: 3px; }
-        
-        nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; font-weight: 500; }
-        nav a:hover { color: var(--primary); }
-        
-        /* BOTÕES */
-        .btn {
-            padding: 12px 30px;
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            display: inline-block;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            cursor: pointer;
-        }
-        .btn:hover { background: var(--primary); color: black; box-shadow: 0 0 15px rgba(0, 255, 136, 0.4); }
-        
-        .btn-sec { border-color: var(--secondary); color: var(--secondary); margin-left: 10px; }
-        .btn-sec:hover { background: var(--secondary); color: black; box-shadow: 0 0 15px rgba(0, 204, 255, 0.4); }
 
-        /* HERO SECTION */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        /* CONTAINER PRINCIPAL */
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .header-text {
             text-align: center;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
-            padding: 120px 20px 60px 20px;
+            margin-bottom: 50px;
         }
-        
-        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; text-transform: uppercase; line-height: 1.1; color: white; }
-        .hero h2 { font-size: 1.5rem; font-weight: 300; color: var(--primary); margin-bottom: 30px; letter-spacing: 1px; }
-        .hero p { font-size: 1.1rem; max-width: 800px; margin-bottom: 40px; color: #bbb; }
 
-        /* SEÇÕES GERAIS */
-        section { padding: 80px 10%; }
-        .section-title { font-size: 2rem; margin-bottom: 40px; color: white; text-transform: uppercase; border-left: 5px solid var(--primary); padding-left: 15px; }
-        
-        /* GRADE DE SERVIÇOS */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        
-        .card {
-            background: var(--card);
-            padding: 30px;
-            border-top: 3px solid #333;
-            transition: 0.3s;
+        .header-text h1 {
+            font-size: 3rem;
+            color: white;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .header-text p {
+            font-size: 1.1rem;
+            color: #aaa;
+        }
+
+        /* AVISO DE AVALIAÇÃO */
+        .notice-box {
+            background: rgba(0, 255, 136, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 25px;
+            margin-bottom: 40px;
             border-radius: 4px;
         }
-        .card:hover { transform: translateY(-5px); border-color: var(--secondary); box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
-        .card h3 { margin-bottom: 15px; color: white; font-size: 1.3rem; }
-        .card p { color: #aaa; font-size: 0.95rem; line-height: 1.7; }
-
-        /* DESTAQUE MARCO LEGAL (STRIPE) */
-        .legal-framework {
-            background: linear-gradient(90deg, #0f0f0f 0%, #161616 100%);
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
+        .notice-title {
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
-            gap: 40px;
+            gap: 10px;
         }
-        .legal-text { flex: 2; }
-        .legal-badge { 
-            flex: 1; 
-            background: rgba(0, 255, 136, 0.05); 
-            border: 1px solid var(--primary); 
-            padding: 20px; 
-            text-align: center; 
-            min-width: 250px;
+        .notice-text { font-size: 1rem; color: #ccc; margin-bottom: 10px; }
+        .notice-highlight { 
+            display: block; 
+            margin-top: 15px; 
+            padding-top: 15px; 
+            border-top: 1px solid rgba(255,255,255,0.1); 
+            font-size: 0.95rem; 
+            color: #fff; 
+            opacity: 0.9;
         }
 
-        /* TAGS DE SETORES */
-        .tags-container { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
-        .tag { background: #222; color: #ccc; padding: 5px 15px; font-size: 0.85rem; border-radius: 20px; border: 1px solid #333; }
-        
-        /* TRL BAR */
-        .trl-bar {
-            display: flex;
+        /* ESTILOS DO FORMULÁRIO */
+        form {
+            background: #111;
+            padding: 40px;
+            border: 1px solid #222;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .form-group { margin-bottom: 25px; }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            padding: 15px;
+            color: white;
+            font-size: 1rem;
+            border-radius: 4px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 10px rgba(0, 204, 255, 0.2);
+            background: #222;
+        }
+
+        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+        /* Disclaimer de Dados */
+        .disclaimer-group {
+            background: rgba(255,255,255,0.03);
+            padding: 15px;
+            border-radius: 4px;
             margin-top: 20px;
-            height: 10px;
-            background: #333;
-            border-radius: 5px;
-            overflow: hidden;
+            border: 1px solid #222;
         }
-        .trl-fill { width: 100%; background: linear-gradient(90deg, var(--secondary), var(--primary)); }
+        .disclaimer-text { font-size: 0.85rem; color: #999; line-height: 1.4; }
 
-        footer { text-align: center; padding: 40px; background: #050505; color: #666; font-size: 0.9rem; border-top: 1px solid #222; }
+        /* BOTÃO DE ENVIO */
+        .btn-submit {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(90deg, #004d29 0%, #00ff88 100%);
+            color: black;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+            letter-spacing: 1px;
+        }
+
+        .btn-submit:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9rem;
+        }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            section { padding: 50px 5%; }
-            header { padding: 15px; }
-            nav { display: none; } /* Menu simplificado mobile */
-            .brand-text { display: none; } /* No celular muito pequeno, mostra só o logo */
+            .header-text h1 { font-size: 2.2rem; }
+            .row { grid-template-columns: 1fr; }
+            form { padding: 25px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="brand-container">
+        <a href="index.html">
             <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <linearGradient id="gradVerde" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -184,129 +204,106 @@
                 <circle cx="160" cy="40" r="7" fill="#00ff88" />
                 <circle cx="40" cy="160" r="7" fill="#00ff88" />
             </svg>
-            <div class="brand-text">XANADU <span>P&D</span></div>
         </a>
-
-        <nav>
-            <a href="#sobre">SOBRE</a>
-            <a href="#servicos">SERVIÇOS</a>
-            <a href="#abordagem">ABORDAGEM</a>
-            <a href="#diferenciais">DIFERENCIAIS</a>
-        </nav>
     </header>
 
-    <div class="hero">
-        <h1>Ideias em Inovação</h1>
-        <h2>Conectando Ciência e Indústria</h2>
-        <p>Impulsionamos o avanço científico e tecnológico no Brasil. Somos catalisadores da inovação, transformando ideias em soluções de mercado e atuando na neoindustrialização do país.</p>
-        <div>
-            <a href="#sobre" class="btn">Conheça a Empresa</a>
-            <a href="https://sistema-bnqr.streamlit.app/" target="_blank" class="btn btn-sec">Plataforma BNQR</a>
+    <div class="container">
+        
+        <div class="header-text">
+            <h1>Adesão à Rede</h1>
+            <p>Preencha o perfil da sua empresa. Nossa equipe avaliará seu potencial tecnológico e de mercado para integração ao ecossistema Xanadu.</p>
+        </div>
+
+        <div class="notice-box">
+            <div class="notice-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--primary)"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                Como Aderir
+            </div>
+            <p class="notice-text">
+                O acesso à Rede Xanadu, especialmente na modalidade Gratuita (Semente), é condicionado à aprovação da nossa <strong>Equipe Técnica</strong>. Buscamos projetos com real potencial de escalonamento tecnológico.
+            </p>
+            <span class="notice-highlight">
+                <strong>Nota de Confidencialidade:</strong> Nesta fase inicial, não é necessário fornecer dados sensíveis ou detalhes técnicos profundos. Basta uma descrição geral do desafio ou da solução. Para o aprofundamento técnico, trabalhamos com a assinatura de <strong>NDA (Acordo de Confidencialidade)</strong>.
+            </span>
+        </div>
+
+        <form action="https://formsubmit.co/contato@xanadupesquisa.com.br" method="POST">
+            
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://www.xanadupesquisa.com.br/obrigado.html">
+
+            <div class="row">
+                <div class="form-group">
+                    <label>Nome do Responsável</label>
+                    <input type="text" name="nome" placeholder="Seu nome completo" required>
+                </div>
+                <div class="form-group">
+                    <label>Cargo / Função</label>
+                    <input type="text" name="cargo" placeholder="Ex: CEO, Pesquisador, Diretor Industrial">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>Email Corporativo</label>
+                    <input type="email" name="email" placeholder="nome@suaempresa.com" required>
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp / Telefone</label>
+                    <input type="tel" name="telefone" placeholder="(XX) 99999-9999" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Nome da Empresa / Startup</label>
+                <input type="text" name="empresa" placeholder="Razão Social ou Nome do Projeto" required>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>Setor de Atuação</label>
+                    <select name="setor" required>
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="Quimica">Química / Materiais</option>
+                        <option value="Petroleo">Petróleo e Gás</option>
+                        <option value="Energia">Energia / Renováveis</option>
+                        <option value="Biotec">Biotecnologia / Saúde</option>
+                        <option value="Agro">Agronegócio</option>
+                        <option value="TI">TI / Deep Tech</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Plano de Interesse</label>
+                    <select name="plano_interesse" required>
+                        <option value="" disabled selected>Selecione o plano...</option>
+                        <option value="Semente">Semente (Gratuito)</option>
+                        <option value="Tracao">Tração (R$ 499)</option>
+                        <option value="Corporativo">Corporativo (R$ 1.999)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Resumo da Tecnologia / Necessidade</label>
+                <textarea name="resumo" rows="4" placeholder="Descreva em linhas gerais o que sua empresa faz ou qual gargalo busca resolver..." required></textarea>
+            </div>
+
+            <div class="disclaimer-group">
+                <p class="disclaimer-text">
+                    <strong style="color:white;">Segurança da Informação:</strong> Seus dados são sigilosos. Ao enviar esta solicitação, você concorda que entraremos em contato para formalização. Estamos à disposição para assinar um <strong>NDA (Non-Disclosure Agreement)</strong> antes de qualquer troca de informações sensíveis.
+                </p>
+            </div>
+
+            <button type="submit" class="btn-submit">ENVIAR SOLICITAÇÃO</button>
+
+        </form>
+
+        <div class="footer-note">
+            &copy; 2026 Xanadu Pesquisa e Desenvolvimento.
         </div>
     </div>
-
-    <section id="sobre">
-        <h2 class="section-title">Nossa Missão</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
-            <div>
-                <p style="font-size: 1.1rem; color: #ddd; margin-bottom: 20px;">
-                    Nosso objetivo é ser a ponte entre o conhecimento acadêmico e as necessidades da indústria, facilitando a transformação de ideias inovadoras em soluções práticas e comercializáveis.
-                </p>
-                <p style="color: #aaa;">
-                    A Xanadu Pesquisa e Desenvolvimento é uma empresa dinâmica dedicada a impulsionar o ecossistema brasileiro. Atuamos em todas as etapas do processo de inovação, desde a concepção inicial até a inserção no mercado.
-                </p>
-            </div>
-            <div style="background: #1a1a1a; padding: 30px; border-radius: 8px;">
-                <h4 style="color: var(--secondary); margin-bottom: 10px;">MATURIDADE TECNOLÓGICA COMPLETA</h4>
-                <p style="font-size: 0.9rem; margin-bottom: 10px;">Cobrimos todo o espectro de desenvolvimento (TRL 1 ao 9).</p>
-                <div class="trl-bar"><div class="trl-fill"></div></div>
-                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #666; margin-top: 5px;">
-                    <span>TRL 1 (Pesquisa)</span>
-                    <span>TRL 9 (Mercado)</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="servicos" style="background: #0d0d0d;">
-        <h2 class="section-title">Nossos Serviços</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Elaboração de Projetos</h3>
-                <p>Desenvolvemos projetos de P&D sob medida para editais de inovação (FINEP, SENAI). Garantimos propostas competitivas e alinhadas às políticas de fomento.</p>
-            </div>
-            <div class="card">
-                <h3>Intermediação Indústria-ICTs</h3>
-                <p>Facilitamos parcerias estratégicas entre o setor produtivo e Institutos de Ciência e Tecnologia, acelerando a transferência de conhecimento.</p>
-            </div>
-            <div class="card">
-                <h3>Gestão de PD&I</h3>
-                <p>Gerenciamento completo (End-to-End): do planejamento e execução técnica até a prestação de contas financeira de projetos de inovação.</p>
-            </div>
-            <div class="card">
-                <h3>Transferência Internacional</h3>
-                <p>Atuação em negociações globais para trazer inovações ao Brasil e inserir tecnologias nacionais no mercado mundial.</p>
-            </div>
-            <div class="card">
-                <h3>RH para Inovação</h3>
-                <p>Seleção e outsourcing de profissionais altamente qualificados (Mestres e Doutores) para compor equipes de alta performance em seus projetos.</p>
-            </div>
-            <div class="card">
-                <h3>Economia do Projetamento</h3>
-                <p>Atuação ativa na proposição de novos projetos, identificando gargalos na indústria e desenhando a solução antes mesmo da demanda surgir.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="abordagem" class="legal-framework">
-        <div class="legal-text">
-            <h2 style="color:white; margin-bottom: 20px; font-size: 1.8rem;">Compromisso com a Neoindustrialização</h2>
-            <p style="color: #bbb; font-size: 1.1rem; max-width: 800px;">
-                Baseamos nossa atuação no <strong>Marco Legal da Inovação (Lei 13.243/2016)</strong>, aproveitando diretrizes estatais para fomentar a pesquisa científica. Sonhamos e trabalhamos por um Brasil tecnologicamente emancipado.
-            </p>
-        </div>
-        <div class="legal-badge">
-            <h3 style="color: var(--primary); font-size: 2.5rem; margin-bottom: 0;">LEI</h3>
-            <span style="color: white; font-size: 1.2rem; display: block;">13.243/2016</span>
-            <small style="color: #888; text-transform: uppercase; margin-top: 5px; display: block;">Marco Legal da Inovação</small>
-        </div>
-    </section>
-
-    <section id="diferenciais">
-        <h2 class="section-title">Por Que a Xanadu?</h2>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-            <div>
-                <h4 style="color: white; margin-bottom: 10px;">Experiência Multisetorial</h4>
-                <p style="color: #aaa; font-size: 0.9rem;">Equipe multidisciplinar com atuação comprovada em setores críticos da economia.</p>
-                <div class="tags-container">
-                    <span class="tag">Química</span>
-                    <span class="tag">Petróleo e Gás</span>
-                    <span class="tag">Farmacêutica</span>
-                    <span class="tag">Biotecnologia</span>
-                    <span class="tag">Energia Verde</span>
-                    <span class="tag">Defesa/Segurança</span>
-                    <span class="tag">TI</span>
-                </div>
-            </div>
-            <div>
-                <h4 style="color: white; margin-bottom: 10px;">Rede de Parceiros</h4>
-                <p style="color: #aaa; font-size: 0.9rem;">Conexão direta com laboratórios de ponta, universidades federais e agências de fomento.</p>
-            </div>
-            <div>
-                <h4 style="color: white; margin-bottom: 10px;">Resultados</h4>
-                <p style="color: #aaa; font-size: 0.9rem;">Histórico de sucesso na aprovação de editais e entrega técnica de projetos complexos.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contato">
-        <h3 style="color: white; margin-bottom: 20px;">XANADU PESQUISA E DESENVOLVIMENTO</h3>
-        <p>Moldando o futuro da inovação no Brasil.</p>
-        <p style="margin: 20px 0;">
-            <a href="mailto:contato@xanadupesquisa.com.br" style="color: var(--primary); text-decoration: none;">contato@xanadupesquisa.com.br</a>
-        </p>
-        <p style="font-size: 0.8rem; opacity: 0.5;">&copy; 2026 Xanadu P&D. Todos os direitos reservados.</p>
-    </footer>
 
 </body>
 </html>
