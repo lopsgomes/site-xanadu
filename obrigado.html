@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xanadu P&D | Solicitação Recebida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #00ff88; /* Verde Neon Tático */
+            --secondary: #00ccff; /* Azul Inovação */
+            --bg: #0a0a0a;      /* Preto Profundo */
+            --text: #e0e0e0;    /* Cinza Claro */
+            --card: #161616;    /* Cinza Chumbo */
+            --accent: #2a2a2a;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        
+        html { font-size: 16px; }
+
+        h1, h2, h3, h4, .btn {
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        body { 
+            background-color: var(--bg); 
+            color: var(--text); 
+            line-height: 1.6; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HEADER SIMPLIFICADO */
+        header {
+            padding: 20px 5%;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: center;
+            background: rgba(0,0,0,0.9);
+        }
+
+        .logo-svg {
+            height: 50px;
+            width: auto;
+        }
+
+        /* CONTAINER CENTRALIZADO */
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .success-card {
+            background: #111;
+            padding: 60px 40px;
+            border: 1px solid #222;
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.1);
+            max-width: 600px;
+            text-align: center;
+            border-top: 4px solid var(--primary);
+        }
+
+        /* ÍCONE ANIMADO DE SUCESSO */
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px auto;
+            border: 2px solid var(--primary);
+        }
+        
+        .check-icon {
+            width: 40px;
+            height: 40px;
+            fill: var(--primary);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        /* BOTÃO VOLTAR */
+        .btn-back {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            font-size: 1rem;
+            border-radius: 4px;
+        }
+
+        .btn-back:hover {
+            background: var(--primary);
+            color: black;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+        }
+
+        .footer-note {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+            <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="gradVerde" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#004d29;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00ff88;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="gradAzul" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#003366;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00ccff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <path d="M 40 40 L 160 160" stroke="url(#gradAzul)" stroke-width="22" stroke-linecap="round" />
+                <circle cx="100" cy="100" r="16" fill="#0a0a0a" />
+                <path d="M 160 40 L 40 160" stroke="url(#gradVerde)" stroke-width="22" stroke-linecap="round" />
+                <circle cx="40" cy="40" r="7" fill="#00ccff" />
+                <circle cx="160" cy="160" r="7" fill="#00ccff" />
+                <circle cx="160" cy="40" r="7" fill="#00ff88" />
+                <circle cx="40" cy="160" r="7" fill="#00ff88" />
+            </svg>
+        </a>
+    </header>
+
+    <div class="main-content">
+        <div class="success-card">
+            
+            <div class="icon-circle">
+                <svg class="check-icon" viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+            </div>
+
+            <h1>Solicitação Enviada!</h1>
+            
+            <p>
+                Agradecemos o seu interesse em fazer parte da Rede Xanadu. Nossa equipe técnica já recebeu seus dados e iniciará a análise do seu perfil tecnológico.
+                <br><br>
+                Em breve, entraremos em contato através do e-mail ou WhatsApp informados para dar prosseguimento ao processo de adesão.
+            </p>
+
+            <a href="index.html" class="btn-back">Voltar para o Início</a>
+
+            <div class="footer-note">
+                &copy; 2026 Xanadu Pesquisa e Desenvolvimento.
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
